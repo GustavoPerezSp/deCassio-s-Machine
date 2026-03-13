@@ -1,0 +1,140 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main">
+
+
+        <h1><span style="color: #ffffff; background-color: #750b0b;">deCassio's</span> Machine</h1>
+
+        <div class="calculator">
+
+            O seu Numero é: <br>
+            <div class="options">
+                <button onclick="Binário()">Binário</button>
+                <button onclick="Decimal()">Decimal</button>
+                <button onclick="Octal()">Octal</button>
+                <button onclick="Hexadecimal()">Hexadecimal</button>
+            </div>
+
+            <div class="num">
+                <h3 id="hNum">Digite um número </h3>
+                <input id="demo1" type="text" placeholder="Insira seu numero aqui!">
+                <br><br>
+            </div>
+
+            <button id="bConversor" onclick="converterDecimal()">Converter</button>
+
+            <h3>Resultados:</h3>
+            <p id="pDemo1">
+            <div id="demo2"></div>
+            </p>
+            <p id="pDemo2">
+            <div id="demo3"></div>
+            </p>
+            <p id="pDemo3">
+            <div id="demo4"></div>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function converterBinario() {
+            var binario = demo1.value;
+
+            pDemo1.innerHTML = `Octal:`
+            demo2.innerHTML = parseInt(binario, 2).toString(8);
+
+            pDemo2.innerHTML = `Decimal:`
+            demo3.innerHTML = parseInt(binario, 2).toString(10);
+
+            pDemo3.innerHTML = `Hexadecimal:`
+            demo4.innerHTML = parseInt(binario, 2).toString(16);
+        }
+
+        function converterDecimal() {
+            var decimal = Number(demo1.value);
+
+
+            pDemo1.innerHTML = `Binario:`
+            demo2.innerHTML = decimal.toString(2);
+
+            pDemo2.innerHTML = `Octal:`
+            demo3.innerHTML = decimal.toString(8);
+
+            pDemo3.innerHTML = `Hexadecimal:`
+            demo4.innerHTML = decimal.toString(16);
+        }
+
+        function converterOctal() {
+            var octal = demo1.value;
+
+            pDemo1.innerHTML = `Binario:`
+            demo2.innerHTML = parseInt(octal, 8).toString(2);
+
+            pDemo2.innerHTML = `Decimal:`
+            demo3.innerHTML = parseInt(octal, 8).toString(10);
+
+            pDemo3.innerHTML = `Hexadecimal:`
+            demo4.innerHTML = parseInt(octal, 8).toString(16);
+        }
+
+        function converterHexa() {
+            var hexa = demo1.value;
+
+            pDemo1.innerHTML = `Binario:`
+            demo2.innerHTML = parseInt(hexa, 16).toString(2);
+
+            pDemo2.innerHTML = `Octal:`
+            demo3.innerHTML = parseInt(hexa, 16).toString(8);
+
+            pDemo3.innerHTML = `Decimal:`
+            demo4.innerHTML = parseInt(hexa, 16).toString(10);
+        }
+
+        function Binário() {
+            hNum.innerHTML = `Digite um número Binário:`
+            document.getElementById("bConversor").onclick = converterBinario
+        }
+
+        function Decimal() {
+            hNum.innerHTML = `Digite um número Decimal:`
+            document.getElementById("bConversor").onclick = converterDecimal
+        }
+
+        function Octal() {
+            hNum.innerHTML = `Digite um número Octal:`
+            document.getElementById("bConversor").onclick = converterOctal
+        }
+
+        function Hexadecimal() {
+            hNum.innerHTML = `Digite um número Hexadecimal:`
+            document.getElementById("bConversor").onclick = converterHexa
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
